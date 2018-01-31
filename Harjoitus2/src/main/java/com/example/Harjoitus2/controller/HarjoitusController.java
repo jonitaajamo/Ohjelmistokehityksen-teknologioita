@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 public class HarjoitusController {
     @RequestMapping("/")
-    public String home() {p
+    public String home() {
         return "index";
     }
     @RequestMapping("/hello")
