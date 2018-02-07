@@ -9,17 +9,17 @@ import javax.persistence.Id;
 @Entity
 public class Book {
 
-    // title, author, year, isbn, price
+    // datatypes: title, author, year, isbn, price
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long Id;
-    String title;
-    String author;
-    int year;
-    long isbn;
-    double price;
+    private Long Id;
+    private String title;
+    private String author;
+    private Integer year;
+    private long isbn;
+    private Double price;
 
-    public Book(String title, String author, int year, long isbn, double price) {
+    public Book(String title, String author, Integer year, long isbn, Double price) {
         this.title = title;
         this.author = author;
         this.year = year;
