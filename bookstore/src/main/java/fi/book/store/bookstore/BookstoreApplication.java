@@ -24,7 +24,7 @@ public class BookstoreApplication {
 		return (args) -> {
 
 			log.info("add one book");
-			repository.save(new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997, 912312311, 19.90));
+			repository.save(new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", 1997, "9123123-11", 19.90));
 
 			for (Book book : repository.findAll()) {
 				log.info(book.toString());

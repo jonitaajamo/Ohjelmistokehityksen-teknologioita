@@ -20,11 +20,11 @@ public class BookController {
         return "booklist";
     }
 
-   /* @RequestMapping(value = "/add")
+    @RequestMapping(value = "/add")
     public String addBook(Model model){
         model.addAttribute("book", new Book());
         return "addbook";
-    } */
+    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Book book){
