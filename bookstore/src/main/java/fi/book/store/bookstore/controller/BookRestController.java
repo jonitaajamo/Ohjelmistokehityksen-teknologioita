@@ -12,16 +12,16 @@ public class BookRestController {
     @Autowired
     private BookRepository repository;
 
-    @RequestMapping(value="/books", method = RequestMethod.GET)
+    @RequestMapping(value="/rest/books", method = RequestMethod.GET)
     public @ResponseBody List<Book> bookListRest() {
         return (List<Book>) repository.findAll();
     }
 
-    @RequestMapping(value="/books/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/rest/books/{id}", method = RequestMethod.GET)
     public @ResponseBody Book findBookRest (@PathVariable("id") Long bookId) {
         return repository.findOne(bookId);
     }
 
-    
+
 
 }
