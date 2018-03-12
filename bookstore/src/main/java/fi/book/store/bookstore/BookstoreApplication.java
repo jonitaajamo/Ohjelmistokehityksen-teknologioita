@@ -1,5 +1,7 @@
 package fi.book.store.bookstore;
 
+import fi.book.store.bookstore.domain.User;
+import fi.book.store.bookstore.domain.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +22,7 @@ public class BookstoreApplication {
 	}
 
 	@Bean
-	public CommandLineRunner bookstore(BookRepository repository) {
+	public CommandLineRunner bookstore(BookRepository repository, UserRepository userRepository) {
 		return (args) -> {
 
 			log.info("add one book");
@@ -29,7 +31,8 @@ public class BookstoreApplication {
 			for (Book book : repository.findAll()) {
 				log.info(book.toString());
 			}
-
+			userRepository.save(new User("admin","admin@email.com", "$2a$10$x/RuzRzQ0J43uJgIwfLmLuZJIVy/SMna.9hk7OCgUqROf2D01u4/6", "ADMIN"));
+			userRepository.save(new User("user","user@email.com", "$2a$10$HmAWALey2am4NbYf.1XfPezdX4rLMjOUauBTTPFKSfteHSJ3DHBvG", "USER"));
 		};
 	}
 }

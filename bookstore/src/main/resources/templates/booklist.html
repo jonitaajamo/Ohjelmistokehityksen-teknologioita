@@ -12,6 +12,12 @@
 <!-- datatypes: title, author, year, isbn, price -->
 <body>
 <div class="container">
+    <header>
+                <p th:inline="text">Logged: [[${#httpServletRequest.remoteUser}]]</p>
+                <form th:action="@{/logout}" method="post" style="float: right">
+                   <input type="submit" value="Log Out" class="btn btn-danger"/>
+                </form>
+            </header>
     <h1>Books</h1>
     <table class="table table-striped">
         <thead>
@@ -31,7 +37,7 @@
             <td th:text="${book.year}"></td>
             <td th:text="${book.isbn}"></td>
             <td th:text="${#numbers.formatDecimal(book.price,2,2,'COMMA')}"></td>
-            <td><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+            <td sec:authorize="hasAuthority('ADMIN')"><a class="btn btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
         </tr>
         </tbody>
 
