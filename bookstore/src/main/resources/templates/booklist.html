@@ -13,7 +13,6 @@
 <body>
 <div class="container">
     <header>
-                <p th:inline="text">Logged: [[${#httpServletRequest.remoteUser}]]</p>
                 <form th:action="@{/logout}" method="post" style="float: right">
                    <input type="submit" value="Log Out" class="btn btn-danger"/>
                 </form>
