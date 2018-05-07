@@ -6,7 +6,7 @@ import Todo from "./Todo";
 import GitHubRepositories from "./GithubRepos";
 import "bulma/css/bulma.css";
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>

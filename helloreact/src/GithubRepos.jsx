@@ -43,6 +43,7 @@ class GitHubRepositories extends Component {
 
     return (
       <div className="box has-text-centered">
+        <div className="title">Repository search</div>
         <div class="field has-addons has-addons-centered">
           <div class="control centered-table">
             <input

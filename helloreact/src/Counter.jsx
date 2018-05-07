@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./App.css";
 
-class Counter extends React.Component {
+class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,13 +27,14 @@ class Counter extends React.Component {
 
   reset = () => {
     this.setState(() => {
-      return { counter: 0 };
+      return {counter: 0};
     });
   };
 
   render() {
     return (
       <div className="box">
+        <div className="title">Counter</div>
         <h2>Counter:</h2>
         <div>{this.state.counter}</div>
         <button className="button is-success" onClick={this.add}>
